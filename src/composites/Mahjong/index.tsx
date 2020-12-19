@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Setup from '../Setup';
+import Scoreboard from '../../components/Scoreboard';
 import { SetupFields, Player } from '../../constants'
 
 const Mahjong = (): JSX.Element => {
@@ -27,7 +28,11 @@ const Mahjong = (): JSX.Element => {
     return <Setup onFinish={onFinishSetup} />
   }
 
-  return <></>;
+  return (
+    <>
+      <Scoreboard players={players} />
+    </>
+  );
 }
 
 export default Mahjong;
