@@ -20,12 +20,10 @@ const Mahjong = (): JSX.Element => {
   }
 
   const onUpdateResults = (results: any): void => {
-    console.log('---onUpdateResults:', results);
     const newScore: { [key: string]: number } = { ...players };
     const TAI_TO_SCORE_MAP = [1, 2, 4, 8, 16];
 
     const change = TAI_TO_SCORE_MAP[results[ResultUpdateFields.Tai] - 1] * bet;
-    console.log(change);
 
     switch (results[ResultUpdateFields.WinType]) {
       case WIN_OPTIONS.ZiMo:
@@ -68,10 +66,10 @@ const Mahjong = (): JSX.Element => {
   }
 
   return (
-    <>
+    <div className='mahjong'>
       <Scoreboard players={players} />
       <ResultUpdate playerNames={Object.keys(players)} onUpdateResults={onUpdateResults} />
-    </>
+    </div>
   );
 }
 
