@@ -23,7 +23,7 @@ const Setup = (props: SetupProps): JSX.Element => {
   }
   
   return (
-  <Form form={form} layout='horizontal' {...formItemLayout} onFinish={props.onFinish} initialValues={initialValues}>
+  <Form form={form} {...formItemLayout} onFinish={props.onFinish} initialValues={initialValues}>
     <Form.Item name={SetupFields.PlayerOne} label={SetupFields.PlayerOne} rules={[{ required: true }]}>
       <Input placeholder={SetupFields.PlayerOne} />
     </Form.Item>

@@ -6,7 +6,15 @@ export enum SetupFields {
   Bet = 'Bet'
 }
 
-export interface Player {
-  name: string;
-  score: number;
+export enum ResultUpdateFields {
+  Winner = 'Winner',
+  WinType = 'Win type',
+  Loser = 'Loser',
+  Tai = '台'
 }
+
+export const WIN_OPTIONS = {
+  ZiMo: '自摸',
+  FangPao: '放炮',
+  FangPaoBaoDa: '放炮包大'
+};

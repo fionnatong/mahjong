@@ -1,9 +1,8 @@
 import React from 'react';
 import { Divider } from 'antd';
-import { Player } from '../../constants'
 
 interface ScoreboardProps {
-  players: Player[];
+  players: { [key: string]: number };
 }
 
 const Scoreboard = (props: ScoreboardProps): JSX.Element => {
@@ -11,7 +10,7 @@ const Scoreboard = (props: ScoreboardProps): JSX.Element => {
     <div className='scoreboard'>
       <Divider orientation='left' className='scoreboard__header'>Scoreboard</Divider>
       <div className='scoreboard__players'>
-        {props.players.map((player: Player) => <div className='scoreboard__players-score'>{player.name}: {player.score}</div>)}
+        {Object.keys(props.players).map((name: string) => <p className='scoreboard__players-score'>{name}: {props.players[name]}</p>)}
       </div>
     </div>
   );
