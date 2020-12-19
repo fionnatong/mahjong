@@ -1,1 +1,3 @@
-export default (): JSX.Element => <h1>it's mahjong time!</h1>
+const Header = (): JSX.Element => <h1>it's mahjong time!</h1>;
+
+export default Header;
