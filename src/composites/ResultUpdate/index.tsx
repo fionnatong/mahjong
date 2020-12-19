@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Radio, Button, Divider } from 'antd';
 import { ResultUpdateFields, WIN_OPTIONS } from '../../constants'
 
@@ -18,6 +18,15 @@ const buttonLayout = {
 
 const ResultUpdate = (props: ResultUpdateProps): JSX.Element => {
   const [form] = Form.useForm();
+  const [loserFieldRules, setLoserFieldRules] = useState<[{}]>([{}]);
+
+  const onWinTypeChange = (e: any): void => {
+    if (e.target.value !== WIN_OPTIONS.ZiMo) {
+      setLoserFieldRules([{ required: true }]);
+    } else {
+      setLoserFieldRules([{}]);
+    }
+  }
 
   return (
     <div className='update-results'>
@@ -28,10 +37,10 @@ const ResultUpdate = (props: ResultUpdateProps): JSX.Element => {
         </Form.Item>
 
         <Form.Item name={ResultUpdateFields.WinType} label={ResultUpdateFields.WinType} rules={[{ required: true }]}>
-          <Radio.Group options={Object.values(WIN_OPTIONS)} optionType='button' />
+          <Radio.Group options={Object.values(WIN_OPTIONS)} optionType='button' onChange={onWinTypeChange} />
         </Form.Item>
 
-        <Form.Item name={ResultUpdateFields.Loser} label={ResultUpdateFields.Loser}>
+        <Form.Item name={ResultUpdateFields.Loser} label={ResultUpdateFields.Loser} rules={loserFieldRules}>
           <Radio.Group options={props.playerNames} optionType='button' />
         </Form.Item>
 
