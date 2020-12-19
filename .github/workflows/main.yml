@@ -1,4 +1,4 @@
-name: mahjong ci
+name: Deployment
 
 on:
   # Triggers the workflow on push events but only for the main branch
@@ -7,7 +7,8 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
+  main:
+    name: build and deploy application
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
