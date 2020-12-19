@@ -10,7 +10,8 @@ export enum ResultUpdateFields {
   Winner = 'Winner',
   WinType = 'Win type',
   Loser = 'Loser',
-  Tai = '台'
+  Tai = '台',
+  Amount = 'Amount'
 }
 
 export const WIN_OPTIONS = {

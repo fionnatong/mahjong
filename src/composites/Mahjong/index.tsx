@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Setup from '../Setup';
 import Scoreboard from '../../components/Scoreboard';
-import ResultUpdate from '../ResultUpdate'
+import ResultUpdate from '../ResultUpdate';
+import MiscUpdate from '../MiscUpdate';
 import { SetupFields, ResultUpdateFields, WIN_OPTIONS } from '../../constants'
 
 const Mahjong = (): JSX.Element => {
@@ -61,6 +62,21 @@ const Mahjong = (): JSX.Element => {
     setPlayers(newScore);
   }
 
+  const onUpdateMiscResults = (results: any): void => {
+    const newScore: { [key: string]: number } = { ...players };
+    Object.keys(players).forEach((player: string) => {
+      if (player === results[ResultUpdateFields.Winner]) {
+        newScore[player] = Number((newScore[player] + results[ResultUpdateFields.Amount]).toFixed(2));
+      }
+
+      if (player === results[ResultUpdateFields.Loser]) {
+        newScore[player] = Number((newScore[player] - results[ResultUpdateFields.Amount]).toFixed(2));
+      }
+    })
+    
+    setPlayers(newScore);
+  }
+
   if (isSettingUp) {
     return <Setup onFinish={onFinishSetup} />
   }
@@ -69,6 +85,7 @@ const Mahjong = (): JSX.Element => {
     <div className='mahjong'>
       <Scoreboard players={players} />
       <ResultUpdate playerNames={Object.keys(players)} onUpdateResults={onUpdateResults} />
+      <MiscUpdate playerNames={Object.keys(players)} onUpdateResults={onUpdateMiscResults} />
     </div>
   );
 }
