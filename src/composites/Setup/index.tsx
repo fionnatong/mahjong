@@ -1,12 +1,9 @@
 import React from 'react';
 import { Form, Input, InputNumber, Button } from 'antd';
+import { SetupFields } from '../../constants'
 
-enum SetupFields {
-  PlayerOne = 'Player 1',
-  PlayerTwo = 'Player 2',
-  PlayerThree = 'Player 3',
-  PlayerFour = 'Player 4',
-  Bet = 'Bet'
+interface SetupProps {
+  onFinish: (values: any) => void;
 }
 
 const formItemLayout = {
@@ -18,32 +15,28 @@ const buttonLayout = {
   wrapperCol: { offset: 3 }
 }
 
-const Setup = (): JSX.Element => {
+const Setup = (props: SetupProps): JSX.Element => {
   const [form] = Form.useForm();
 
   const initialValues: {[key in SetupFields]?: any} = {
     [SetupFields.Bet]: 0.1
   }
-
-  const onFinish = (values: any): void => {
-    console.log('---onFinish:', values);
-  }
   
   return (
-  <Form form={form} layout='horizontal' {...formItemLayout} onFinish={onFinish} initialValues={initialValues}>
-    <Form.Item name={SetupFields.PlayerOne} label={SetupFields.PlayerOne}>
+  <Form form={form} layout='horizontal' {...formItemLayout} onFinish={props.onFinish} initialValues={initialValues}>
+    <Form.Item name={SetupFields.PlayerOne} label={SetupFields.PlayerOne} rules={[{ required: true }]}>
       <Input placeholder={SetupFields.PlayerOne} />
     </Form.Item>
 
-    <Form.Item name={SetupFields.PlayerTwo} label={SetupFields.PlayerTwo}>
+    <Form.Item name={SetupFields.PlayerTwo} label={SetupFields.PlayerTwo} rules={[{ required: true }]}>
       <Input placeholder={SetupFields.PlayerTwo} />
     </Form.Item>
 
-    <Form.Item name={SetupFields.PlayerThree} label={SetupFields.PlayerThree}>
+    <Form.Item name={SetupFields.PlayerThree} label={SetupFields.PlayerThree} rules={[{ required: true }]}>
       <Input placeholder={SetupFields.PlayerThree} />
     </Form.Item>
 
-    <Form.Item name={SetupFields.PlayerFour} label={SetupFields.PlayerFour}>
+    <Form.Item name={SetupFields.PlayerFour} label={SetupFields.PlayerFour} rules={[{ required: true }]}>
       <Input placeholder={SetupFields.PlayerFour} />
     </Form.Item>
 

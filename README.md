@@ -1,6 +1,6 @@
 # mahjong calculator
 
-When you and your friends can't do mahjong math
+When you and your friends can't do mahjong math.\
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

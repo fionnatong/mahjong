@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
-import Setup from './composites/Setup';
+import Mahjong from './composites/Mahjong'
 
 import './App.css';
 
@@ -8,7 +8,7 @@ const App = (): JSX.Element => {
   return (
     <div className="App">
       <Header />
-      <Setup />
+      <Mahjong />
     </div>
   );
 }
