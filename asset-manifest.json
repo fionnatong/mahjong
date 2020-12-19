@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/mahjong/static/css/main.2342ec45.chunk.css",
+    "main.js": "/mahjong/static/js/main.fca6ed46.chunk.js",
+    "main.js.map": "/mahjong/static/js/main.fca6ed46.chunk.js.map",
+    "runtime-main.js": "/mahjong/static/js/runtime-main.7b748867.js",
+    "runtime-main.js.map": "/mahjong/static/js/runtime-main.7b748867.js.map",
+    "static/css/2.4d98ed14.chunk.css": "/mahjong/static/css/2.4d98ed14.chunk.css",
+    "static/js/2.cf953f1d.chunk.js": "/mahjong/static/js/2.cf953f1d.chunk.js",
+    "static/js/2.cf953f1d.chunk.js.map": "/mahjong/static/js/2.cf953f1d.chunk.js.map",
+    "index.html": "/mahjong/index.html",
+    "static/css/2.4d98ed14.chunk.css.map": "/mahjong/static/css/2.4d98ed14.chunk.css.map",
+    "static/css/main.2342ec45.chunk.css.map": "/mahjong/static/css/main.2342ec45.chunk.css.map",
+    "static/js/2.cf953f1d.chunk.js.LICENSE.txt": "/mahjong/static/js/2.cf953f1d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7b748867.js",
+    "static/css/2.4d98ed14.chunk.css",
+    "static/js/2.cf953f1d.chunk.js",
+    "static/css/main.2342ec45.chunk.css",
+    "static/js/main.fca6ed46.chunk.js"
+  ]
+}
